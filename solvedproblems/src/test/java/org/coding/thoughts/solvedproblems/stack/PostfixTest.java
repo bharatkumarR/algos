@@ -1,6 +1,5 @@
 package org.coding.thoughts.solvedproblems.stack;
 
-import org.coding.thoughts.solvedproblems.stack.Postfix;
 import org.junit.Assert;
 import org.junit.Test;
 

@@ -30,7 +30,6 @@ public class SortingUtilTest {
 		int[] expectedArray = new int[] { 0, 1, 2, 5, 6, 9 };
 		boolean isArraySorted = assertArrayOrder(array, expectedArray);
 		Assert.assertTrue(isArraySorted);
-		System.out.println(7 / 2);
 	}
 
 	@Test
@@ -40,7 +39,15 @@ public class SortingUtilTest {
 		int[] expectedArray = new int[] { 0, 1, 2, 5, 6, 9 };
 		boolean isArraySorted = assertArrayOrder(array, expectedArray);
 		Assert.assertTrue(isArraySorted);
-		System.out.println(7 / 2);
+	}
+
+	@Test
+	public void verifyQuickSort() {
+		int[] array = new int[] { 5, 2, 6, 1, 0, 9 };
+		SortingUtil.quicksort(array);
+		int[] expectedArray = new int[] { 0, 1, 2, 5, 6, 9 };
+		boolean isArraySorted = assertArrayOrder(array, expectedArray);
+		Assert.assertTrue(isArraySorted);
 	}
 
 	private boolean assertArrayOrder(int[] array, int[] expectedArray) {

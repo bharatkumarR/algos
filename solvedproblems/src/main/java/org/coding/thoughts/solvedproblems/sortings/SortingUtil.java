@@ -43,12 +43,44 @@ public class SortingUtil {
 					}
 				}
 				if (i != minValIdx) {
-					int temp = array[i];
-					array[i] = array[minValIdx];
-					array[minValIdx] = temp;
+					swap(array, minValIdx, i);
 				}
 			}
 		}
+	}
+
+	public static void quicksort(int[] array) {
+		quicksort(array, 0, array.length - 1);
+	}
+
+	public static void quicksort(int[] array, int start, int end) {
+		if (start < end) {
+			int i = partition(array, start, end);
+			quicksort(array, start, i - 1);
+			quicksort(array, i + 1, end);
+		}
+	}
+
+	public static int partition(int[] array, int start, int end) {
+		int partionIndex = start;
+		int pivot = array[end];
+		for (int i = start; i < end; i++) {
+			if (array[i] <= pivot) {
+				if (i != partionIndex) {
+					swap(array, partionIndex, i);
+				}
+				partionIndex++;
+			}
+		}
+
+		swap(array, end, partionIndex);
+		return partionIndex;
+	}
+
+	private static void swap(int[] array, int start, int i) {
+		int temp = array[i];
+		array[i] = array[start];
+		array[start] = temp;
 	}
 
 	public static void mergeSort(int[] array) {
