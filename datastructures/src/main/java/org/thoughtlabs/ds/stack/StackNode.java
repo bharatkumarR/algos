@@ -23,4 +23,8 @@ public class StackNode<E> {
 	public E top() {
 		return head.getElement();
 	}
+
+	public boolean isNotEmpty() {
+		return head != null;
+	}
 }
