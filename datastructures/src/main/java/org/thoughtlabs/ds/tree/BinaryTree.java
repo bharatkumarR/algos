@@ -2,7 +2,7 @@ package org.thoughtlabs.ds.tree;
 
 import java.util.function.Consumer;
 
-import org.thoughtlabs.ds.que.QueNode;
+import org.thoughtlabs.ds.que.Que;
 import org.thoughtlabs.ds.stack.StackNode;
 
 public class BinaryTree<E> {
@@ -14,7 +14,7 @@ public class BinaryTree<E> {
 			root = new TreeNode<>(element);
 		} else {
 			TreeNode<E> treeNode = new TreeNode<>(element);
-			QueNode<TreeNode<E>> que = new QueNode<>();
+			Que<TreeNode<E>> que = new Que<>();
 			que.enQue(root);
 			while (que.isNotEmpty()) {
 				TreeNode<E> deQue = que.deQue();
@@ -148,12 +148,16 @@ public class BinaryTree<E> {
 	}
 
 	public void levelOrderTraversal(Consumer<E> consumer) {
-		levelOrderTraversal(root, consumer);
+		levelOrderTraversal(getRoot(), consumer);
+	}
+
+	protected TreeNode<E> getRoot() {
+		return this.root;
 	}
 
 	public void levelOrderTraversal(TreeNode<E> node, Consumer<E> consumer) {
 		if (node != null) {
-			QueNode<TreeNode<E>> que = new QueNode<>();
+			Que<TreeNode<E>> que = new Que<>();
 			que.enQue(node);
 			while (que.isNotEmpty()) {
 				TreeNode<E> deQue = que.deQue();

@@ -51,7 +51,6 @@ public class BinaryTreeTest {
 	}
 
 	@Test
-	// TODO this is failing need to fix this
 	public void verifyPostOrderTraversalLoop() {
 		startVal = 0;
 		int[] expectedArray = new int[] { 8, 9, 4, 10, 11, 5, 2, 12, 13, 6, 14, 15, 7, 3, 1 };
@@ -59,7 +58,6 @@ public class BinaryTreeTest {
 		for (int i = 1; i < 16; i++) {
 			tree.add(i);
 		}
-		tree.postOrderTraversalLoop(System.out::println);
 		tree.postOrderTraversalLoop((val) -> Assert.assertTrue(expectedArray[startVal++] == val));
 	}
 

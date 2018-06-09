@@ -2,7 +2,7 @@ package org.thoughtlabs.ds.que;
 
 import org.thoughtlabs.ds.list.SingleNode;
 
-public class QueNode<E> {
+public class Que<E> {
 
 	private SingleNode<E> head;
 
