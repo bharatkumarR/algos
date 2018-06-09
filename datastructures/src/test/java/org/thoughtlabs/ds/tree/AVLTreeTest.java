@@ -68,4 +68,20 @@ public class AVLTreeTest {
 		avl.levelOrderTraversal(consumer);
 	}
 
+	@Test
+	public void testAVL() {
+		AVLTree<Integer> avl = new AVLTree<>();
+		avl.add(10);
+		avl.add(20);
+		avl.add(30);
+		avl.add(40);
+		avl.add(50);
+		avl.add(25);
+		int[] expected = { 30, 20, 40, 10, 25, 50 };
+		Consumer<Integer> consumer = val -> {
+			Assert.assertTrue(expected[i++] == val);
+		};
+		avl.levelOrderTraversal(consumer);
+	}
+
 }
